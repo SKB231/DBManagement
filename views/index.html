@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Crud App</title>
+        <link rel="stylesheet" href="../assets/css/style.css" />
+    </head>
+    <body>
+        <header id="header">
+            <nav>
+                <div class="container">
+                    <div class="text-center">
+                        <a href="/" class="nav-brand text-dark"
+                            >User Management System</a
+                        >
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="site-main">
+            <div class="container">
+                <div class="box-nav d-flex jusitfy-between">
+                    <a href="/add-user" class="border-shadow">
+                        <span class="text-gradient"> New User </span>
+                    </a>
+                </div>
+
+                <form action="/" method="POST">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>name</th>
+                                <th>@Email</th>
+                                <th>Gender</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Krishna</td>
+                                <td>example@gmail.com</td>
+                                <td>Male</td>
+                                <td>Active</td>
+                                <td>
+                                    <a
+                                        href="#"
+                                        class="btn border-shadow update"
+                                    >
+                                        <span class="text-gradient"> E </span>
+                                    </a>
+
+                                    <a class="btn border-shadow delete">
+                                        <span class="text-gradient"> D </span>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>Krishna</td>
+                                <td>example@gmail.com</td>
+                                <td>Male</td>
+                                <td>Active</td>
+                                <td>
+                                    <a
+                                        href="#"
+                                        class="btn border-shadow update"
+                                    >
+                                        <span class="text-gradient"> E </span>
+                                    </a>
+
+                                    <a class="btn border-shadow delete">
+                                        <span class="text-gradient"> D </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

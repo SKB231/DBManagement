@@ -2,7 +2,7 @@
   "name": "dbmanagement",
   "version": "1.0.0",
   "description": "A simple database management system that I am making to help me get a better understanding of CRUD applications.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server"
   },

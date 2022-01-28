@@ -9,7 +9,7 @@ router.get("/add-user", services.add_user);
 
 //API
 router.post("/api/users", controller.create);
-router.get("/api/users", controller.find);
+router.get("/api/users/", controller.find);
 router.put("/api/users/:id", controller.upd);
 router.delete("/api/users/:id", controller.del);
 

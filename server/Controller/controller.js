@@ -2,7 +2,6 @@ let userDB = require("../model/model");
 
 //Create and save new user
 const create = (req, res) => {
-    console.log(req.body);
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content cannot be empty" });
@@ -32,13 +31,65 @@ const create = (req, res) => {
 };
 
 //Retrieve and return all users/retrive and return a single user
-const find = (req, res) => {};
+const find = (req, res) => {
+    
+
+    userDB
+        .find()
+        .then((user) => {
+            res.send(user);
+        })
+        .catch((err) => {
+            res.status(500).send({
+                message: err.message || "Error occured while READ operation",
+            });
+        });
+};
 
 //Update a new user identified by the user id.
-const upd = (req, res) => {};
+const upd = (req, res) => {
+    if (!req.body) {
+        return res
+            .status(400)
+            .send({ message: "Data to update cannot be empty." });
+    }
+    const id = req.params.id;
+    userDB
+        .findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+        .then((data) => {
+            if (!data) {
+                res.status(404).send({ message: "Unable" });
+            } else {
+                res.send(data);
+            }
+        })
+        .catch((err) => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occured in the CREATE operation",
+            });
+        });
+};
 
 //Delete a user with a specified user id in the request.
-const del = (req, res) => {};
+const del = (req, res) => {
+    const id = req.params.id;
+    userDB
+        .findByIdAndDelete(id)
+        .then((data) => {
+            if (!data) {
+                res.status(404).send({ message: "Unable" });
+            } else {
+                res.send({ message: "User was deleted successful" });
+            }
+        })
+        .catch((err) => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occured in the CREATE operation",
+            });
+        });
+};
 
 module.exports = {
     create: create,

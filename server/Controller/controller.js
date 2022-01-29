@@ -7,7 +7,6 @@ const create = (req, res) => {
         res.status(400).send({ message: "Content cannot be empty" });
         return;
     }
-
     //New User object
     const user = new userDB({
         name: req.body.name,
@@ -32,10 +31,7 @@ const create = (req, res) => {
 
 //Retrieve and return all users/retrive and return a single user
 const find = (req, res) => {
-    
-
-    userDB
-        .find()
+    (req.query.id ? userDB.findById(req.query.id) : userDB.find())
         .then((user) => {
             res.send(user);
         })

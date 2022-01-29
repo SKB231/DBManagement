@@ -1,33 +1,22 @@
-<tr>
-    <td>1</td>
-    <td>Krishna</td>
-    <td>example@gmail.com</td>
-    <td>Male</td>
-    <td>Active</td>
-    <td>
-        <a href="#" class="btn border-shadow update">
-            <span class="text-gradient"> E </span>
-        </a>
+<%for(var i=0;i<users.length;i++){%>
+    <tr>
+        <td><%=i+1%></td>
+        <td><%=users[i].name%></td>
+        <td><%=users[i].email%></td>
+        <td><%=users[i].gender%></td>
+        <td><%=users[i].status%></td>
+        <td>
+            <a
+                href="/update-user?id=<%=users[i]._id%>"
+                class="btn border-shadow update"
+            >
+                <span class="text-gradient"> Edit </span>
+            </a>
 
-        <a class="btn border-shadow delete">
-            <span class="text-gradient"> D </span>
-        </a>
-    </td>
-</tr>
-
-<tr>
-    <td>1</td>
-    <td>Krishna</td>
-    <td>example@gmail.com</td>
-    <td>Male</td>
-    <td>Active</td>
-    <td>
-        <a href="#" class="btn border-shadow update">
-            <span class="text-gradient"> E </span>
-        </a>
-
-        <a class="btn border-shadow delete">
-            <span class="text-gradient"> D </span>
-        </a>
-    </td>
-</tr>
+            <a class="btn border-shadow delete" data-id=<%=users[i]._id%>>
+                <span class="text-gradient"> Delete </span>
+            </a>
+        </td>
+    </tr>
+    <%}%></users.length;i++){%
+>

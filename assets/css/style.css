@@ -18,6 +18,10 @@ a {
     font-family: "PT Sans", sans-serif;
 }
 
+.delete:hover {
+    cursor: pointer;
+}
+
 nav {
     display: flex;
     justify-content: flex-end;
@@ -166,12 +170,14 @@ table {
     padding: 0.5em 0;
 }
 
-#update_user {
+#update_user,
+#add_user {
     display: flex;
     justify-content: center;
 }
 
-#update_user .form-group {
+#update_user .form-group,
+#add_user .form-group {
     margin: 0.4em 0;
 }
 
@@ -181,7 +187,8 @@ table {
     width: 100%;
 }
 
-#update_user .form-group input[type="text"] {
+#update_user .form-group input[type="text"],
+#add_user .form-group input[type="text"] {
     width: 100%;
     padding: 0.6em 1em;
     margin: 0.5em 0;
@@ -191,11 +198,13 @@ table {
     border-radius: 0.2em;
 }
 
-#update_user .form-group .radio {
+#update_user .form-group .radio,
+#add_user .form-group .radio {
     margin: 1em 2em;
 }
 
-#update_user .form-group .btn {
+#update_user .form-group .btn,
+#add_user .form-group .btn {
     width: 100%;
     padding: 0.9em 1em;
     background: #16db93;
@@ -206,7 +215,8 @@ table {
     margin: 0.5em 0;
 }
 
-#update_user .form-group .btn:hover {
+#update_user .form-group .btn:hover,
+#add_user .form-group .btn:hover {
     background-color: var(--dark);
     color: var(--border);
     cursor: pointer;

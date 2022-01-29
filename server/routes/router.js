@@ -6,6 +6,7 @@ const services = require("../services/render");
 
 router.get("/", services.homeRoutes);
 router.get("/add-user", services.add_user);
+router.get("/update-user", services.update_user);
 
 //API
 router.post("/api/users", controller.create);

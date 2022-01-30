@@ -6,7 +6,7 @@ I don't want this to be a cookie cutter project coppied off of Youtube,but rathe
  
  1) Create the initial project to learn the basics of CRUD Operations, and the project should have a basic database system.
  
- 2) **Add user authentication such that the teachers can view and edit the student records. And the students can only view their record.<----**
+ 2) **Add user authentication such that the users can see their own records and changes instead of puplically accessing them.<----**
 
 ## Tools being used currently:
  - NodeJS

@@ -8,7 +8,8 @@ I don't want this to be a cookie cutter project coppied off of Youtube,but rathe
  
  2) **Add user authentication such that the users can see their own records and changes instead of puplically accessing them.<----**
 
-## Tools being used currently:
+## Main Tools being used currently:
  - NodeJS
  - Express
  - MongoDB
+ - EJS

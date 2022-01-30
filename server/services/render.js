@@ -5,7 +5,10 @@ exports.homeRoutes = (req, res) => {
     axios
         .get("http://localhost:3000/api/users")
         .then((response) => {
-            res.render("index", { users: response.data });
+            res.render("index", {
+                users: response.data,
+                userName: req.user.name,
+            });
         })
         .catch((err) => {
             res.send(err);
@@ -28,11 +31,10 @@ exports.update_user = (req, res) => {
         });
 };
 
-
-exports.loginPage = (req,res) => {
+exports.loginPage = (req, res) => {
     res.render("login");
-}
+};
 
-exports.registerPage = (req,res) => {
+exports.registerPage = (req, res) => {
     res.render("register");
-}
+};

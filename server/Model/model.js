@@ -11,14 +11,13 @@ let UserSchema = new mongoose.Schema({
         unique: true,
     },
     gender: "string",
-    status: "string",
+    status: "string"
 });
 
 let profileSchema = new mongoose.Schema({
     name: {
         type: "string",
         required: true,
-        unique: true,
     },
     email: {
         type: "string",
@@ -27,7 +26,7 @@ let profileSchema = new mongoose.Schema({
     password: {
         type: "string",
         required: true,
-    },
+    }
 });
 
 let userdb = mongoose.model("userdb", UserSchema);

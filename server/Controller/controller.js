@@ -1,4 +1,6 @@
 let userDB = require("../model/model").user;
+let profModel = require("../model/model").profile;
+const bcrypt = require("bcrypt");
 
 //Create and save new user
 const create = (req, res) => {
@@ -86,10 +88,37 @@ const del = (req, res) => {
             });
         });
 };
-
+const register = async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        let newUser = new profModel({
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+        });
+        console.log("REACHED HERE", newUser);
+        newUser
+            .save(newUser)
+            .then((data) => {
+                res.redirect("/login");
+            })
+            .catch((err) => {
+                res.status(500).send({
+                    message:
+                        err.message ||
+                        "Some error occured in the CREATE operation",
+                });
+            });
+    } catch (err) {
+        res.sendStatus(400).json({
+            message: err,
+        });
+    }
+};
 module.exports = {
     create: create,
     find: find,
     del: del,
     upd: upd,
+    register: register,
 };

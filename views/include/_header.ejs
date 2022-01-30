@@ -9,6 +9,14 @@
     <body>
         <header id="header">
             <nav>
+                <span>
+                    <form action="/api/logout" method="POST">
+                        <button type="submit">Logout</button>
+                    </form>
+                </span>
+                <span>
+                    <h1><%=userName%></h1>
+                </span>
                 <div class="container">
                     <div class="text-center">
                         <a href="/" class="nav-brand text-dark"
@@ -18,3 +26,4 @@
                 </div>
             </nav>
         </header>
+

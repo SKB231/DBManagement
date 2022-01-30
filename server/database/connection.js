@@ -8,6 +8,12 @@ const connectDB = async () => {
     } catch(err) {
         console.log("Error: ", err);
     }
+
+    const profile = require('../model/model').profile;
+
+    
+
+
 };
 
 module.exports = connectDB;

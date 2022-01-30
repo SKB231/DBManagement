@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 let UserSchema = new mongoose.Schema({
+    ownerName: {
+        type: "string",
+        required: true,
+    },
     name: {
         type: "string",
         required: true,
@@ -11,7 +15,7 @@ let UserSchema = new mongoose.Schema({
         unique: true,
     },
     gender: "string",
-    status: "string"
+    status: "string",
 });
 
 let profileSchema = new mongoose.Schema({
@@ -26,7 +30,7 @@ let profileSchema = new mongoose.Schema({
     password: {
         type: "string",
         required: true,
-    }
+    },
 });
 
 let userdb = mongoose.model("userdb", UserSchema);

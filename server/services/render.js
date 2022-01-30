@@ -1,34 +1,54 @@
 const axios = require("axios");
+const records = require("../model/model").user;
 
 exports.homeRoutes = (req, res) => {
     //Make a get request to /api/users
-    axios
-        .get("http://localhost:3000/api/users")
-        .then((response) => {
+
+    (async (req, res) => {
+        try {
+            const allUsers = await records.find({ ownerName: req.user.name });
+            console.log(allUsers);
             res.render("index", {
-                users: response.data,
+                users: allUsers,
                 userName: req.user.name,
             });
-        })
-        .catch((err) => {
+        } catch (err) {
             res.send(err);
-        });
+        }
+    })(req, res);
 };
 
 exports.add_user = (req, res) => {
-    res.render("add_user");
+    res.render("add_user", {
+        userName: req.user.name,
+    });
 };
 
 exports.update_user = (req, res) => {
-    axios
-        .get("http://localhost:3000/api/users?id=" + req.query.id)
-        .then((response) => {
-            console.log(response.data);
+    (async (req, res) => {
+        try {
+            const targetRecord = await records.findById(req.query.id);
+            console.log(targetRecord);
             res.render("update_user", {
-                user: response.data,
+                user: targetRecord,
                 id: req.query.id,
+                userName: req.user.name,
             });
-        });
+        } catch (err) {
+            res.send(err);
+        }
+    })(req, res);
+
+    // axios
+    //     .get("http://localhost:3000/api/users?id=" + req.query.id)
+    //     .then((response) => {
+    //         console.log(response.data);
+    //         res.render("update_user", {
+    //             user: response.data,
+    //             id: req.query.id,
+    //             userName: req.user.name,
+    //         });
+    //     });
 };
 
 exports.loginPage = (req, res) => {

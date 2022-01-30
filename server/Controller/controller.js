@@ -11,6 +11,7 @@ const create = (req, res) => {
     }
     //New User object
     const user = new userDB({
+        ownerName: req.body.ownerName,
         name: req.body.name,
         email: req.body.email,
         gender: req.body.gender,
@@ -90,11 +91,11 @@ const del = (req, res) => {
 };
 const register = async (req, res) => {
     try {
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        // const hashedPassword = await bcrypt.hash(req.body.password, 10);
         let newUser = new profModel({
             name: req.body.name,
             email: req.body.email,
-            password: hashedPassword,
+            password: req.body.password,
         });
         console.log("REACHED HERE", newUser);
         newUser

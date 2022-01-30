@@ -1,4 +1,4 @@
-let userDB = require("../model/model");
+let userDB = require("../model/model").user;
 
 //Create and save new user
 const create = (req, res) => {

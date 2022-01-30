@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const connectDB = require("./server/database/connection");
 const router = require("./server/routes/router");
+const jwt = require("jsonwebtoken");
 
 //dotEnv.config({path to your config.env file}) allows us to load the config.env contents into the process.env.
 dotEnv.config({ path: "config.env" });
@@ -30,5 +31,66 @@ app.use("/img", express.static(path.resolve(__dirname, "assets", "img")));
 app.use("/js", express.static(path.resolve(__dirname, "assets", "js")));
 
 app.use(router);
+
+// const users = [];
+
+// app.get("/users", (req, res) => {
+//     res.json(users);
+// });
+
+// app.post("/users", async (req, res) => {
+//     try {
+//         const hashedPassword = await bcrypt.hash(req.body.password, 10);
+//         const newUser = {
+//             name: req.body.name,
+//             password: hashedPassword,
+//         };
+//         users.push(newUser);
+//         res.status(201).send();
+//     } catch {
+//         res.status(500).send();
+//     }
+// });
+
+// app.post("/users/login", async (req, res) => {
+//     const user = users.find((user) => user.name === req.body.name);
+//     if (!user) {
+//         res.status(400).send("Cannot find user");
+//         return;
+//     }
+//     try {
+//         if (await bcrypt.compare(req.body.password, user.password)) {
+//             const userAccessToken = jwt.sign(
+//                 user,
+//                 process.env.ACCESS_TOKEN_SECRET
+//             );
+//             res.json({ userToken: userAccessToken });
+//         }
+//     } catch {
+//         console.log("Incorrect Password");
+//         res.status(500).send();
+//     }
+// });
+
+// function authenticateToken(req, res, next) {
+//     //The next line retrieves the header information for "authorization" header
+//     const auth = req.headers["authorization"];
+//     console.log(auth);
+
+//     //This header will be of the form "BEARER <token>" and we want to just retrive the "<token>" part.
+//     const token = auth && auth.split(" ")[1];
+
+//     if (!token) {
+//         return res.sendStatus(401);
+//     }
+
+//     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+//         if (err) {
+//             return res.sendStatus(403);
+//             req.user = user;
+//         }
+//         next();
+//     });
+// }
 
 app.listen(PORT);

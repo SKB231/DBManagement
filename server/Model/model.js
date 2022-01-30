@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let schema = new mongoose.Schema({
+let UserSchema = new mongoose.Schema({
     name: {
         type: "string",
         required: true,
@@ -14,6 +14,24 @@ let schema = new mongoose.Schema({
     status: "string",
 });
 
-let userdb = mongoose.model("userdb", schema);
+let profileSchema = new mongoose.Schema({
+    name: {
+        type: "string",
+        required: true,
+        unique: true,
+    },
+    email: {
+        type: "string",
+        required: true,
+    },
+    password: {
+        type: "string",
+        required: true,
+    },
+});
 
-module.exports = userdb;
+let userdb = mongoose.model("userdb", UserSchema);
+let profiledb = mongoose.model("profiledb", profileSchema);
+
+module.exports.user = userdb;
+module.exports.profile = profiledb;

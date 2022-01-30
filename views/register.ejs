@@ -4,39 +4,33 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Crud App</title>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/login.css" />
     </head>
     <body>
-        <header id="header">
-            <nav>
-                <div class="container">
-                    <div class="text-center">
-                        <a class="nav-brand text-dark"
-                            >User Management System</a
-                        >
+        <main>
+            <form method="POST" action="/api/register" class="box">
+                <h1>Register</h1>
+                <div class="groups">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" placeholder="email" required />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="password"
+                            name="password"
+                            required
+                            placeholder="password"
+                        />
                     </div>
                 </div>
-            </nav>
-        </header>
 
-        <main>
-            <h1>Register</h1>
-            <form method="POST" action="/api/register">
-                <div class="form-group">
-                    <label for="name">name:</label>
-                    <input type="text" id="name" name="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">email:</label>
-                    <input type="text" id="email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="password">password:</label>
-                    <input type="text" id="password" name="password" required />
-                </div>
                 <button type="submit">Register</button>
+                <a href="/login">Login</a>
             </form>
-            <a href="/login">Login</a>
         </main>
     </body>
 </html>

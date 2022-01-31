@@ -239,7 +239,10 @@ table {
 
 .nameText {
     font-family: sans-serif;
-    color: rgba(255, 255, 255, 0.514);
+    color: rgba(255, 255, 255, 0.808);
     font: 200;
     font-size: small;
+    padding-right: 1rem;
+    position: relative;
+    top: 0.7rem;
 }

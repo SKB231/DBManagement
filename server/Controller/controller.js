@@ -1,5 +1,5 @@
-let userDB = require("../model/model").user;
-let profModel = require("../model/model").profile;
+let userDB = require("../Model/model").user;
+let profModel = require("../Model/model").profile;
 const bcrypt = require("bcrypt");
 
 //Create and save new user

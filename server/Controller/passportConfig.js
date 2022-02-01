@@ -1,5 +1,5 @@
 const localStrategy = require("passport-local").Strategy;
-const profile = require("../model/model").profile;
+const profile = require("../Model/model").profile;
 const bcrypt = require("bcrypt");
 
 const initialize = (passport, getUserByEmail, getUserById) => {

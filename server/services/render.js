@@ -1,5 +1,5 @@
 const axios = require("axios");
-const records = require("../model/model").user;
+const records = require("../Model/model").user;
 
 exports.homeRoutes = (req, res) => {
     //Make a get request to /api/users

@@ -7,7 +7,7 @@ const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 
-const profileModel = require("../model/model").profile;
+const profileModel = require("../Model/model").profile;
 
 function checkAuthenticatd(req, res, next) {
     if (req.isAuthenticated()) {

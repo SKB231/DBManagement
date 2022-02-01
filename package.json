@@ -4,7 +4,7 @@
   "description": "A simple database management system that I am making to help me get a better understanding of CRUD applications.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server",
+    "start": "node server.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

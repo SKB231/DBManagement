@@ -9,7 +9,7 @@ $("#update_user").submit((evt) => {
     console.log(data);
 
     let request = {
-        url: `http://localhost:3000/api/users/${data.id}`,
+        url: `https://dbmanager-nodejs.herokuapp.com/api/users/${data.id}`,
         method: "PUT",
         data: data,
     };
@@ -26,7 +26,7 @@ if (window.location.pathname == "/") {
         let id = $(this).attr("data-id");
         let name = $(this).attr("data-name");
         let request = {
-            url: `http://localhost:3000/api/users/${id}`,
+            url: `https://dbmanager-nodejs.herokuapp.com/api/users/${id}`,
             method: `DELETE`,
         };
         console.log("DELETING");

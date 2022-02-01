@@ -8,9 +8,10 @@ const connectDB = require("./server/database/connection");
 const router = require("./server/routes/router");
 const jwt = require("jsonwebtoken");
 
+const PORT = process.env.PORT || 3000;
+
 //dotEnv.config({path to your config.env file}) allows us to load the config.env contents into the process.env.
 dotEnv.config({ path: "config.env" });
-const PORT = process.env.PORT || 8080;
 
 //logs requests and sends it to middleware.next();
 app.use(morgan("tiny"));

@@ -1,6 +1,5 @@
 # [DBManagement](https://dbmanager-nodejs.herokuapp.com/) 
-A simple database management system that I am making to help me get a better understanding of CRUD applications.
-I don't want this to be a cookie cutter project coppied off of Youtube,but rather I want to learn how to make these applications better.
+A simple database management system that I am making to help me get a better understanding of CRUD applications. It's made with MongoDB, Express, and Node JS. It uses the Passport login system for conducting user authentication, which uses JWT. 
 
 ## Project Roadmap:
  

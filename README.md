@@ -1,6 +1,6 @@
 # [DBManagement](https://dbmanager-nodejs.herokuapp.com/) 
 
-## Current demo not workin, because the heroku server is shut down (for certain tiers). I am working on hosting my app in a different server.
+## Current demo not working, because the heroku server is shut down (for certain tiers). I am working on hosting my app in a different server.
 
 A simple database management system that I am making to help me get a better understanding of CRUD applications. It's made with MongoDB, Express, and Node JS. It uses the Passport login system for conducting user authentication, which uses JWT. 
 
